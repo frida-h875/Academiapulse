@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AcademiaPulse — Academic Resources, Research Tools & Digital Services</title>
+    <!-- Tailwind CSS CDN for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#eef2ff',
+                            100: '#e0e7ff',
+                            500: '#6366f1',
+                            600: '#4f46e5',
+                            700: '#4338ca',
+                            900: '#312e81',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-brand-500 selection:text-white">
+
+    <!-- Announcement Bar -->
+    <div class="bg-brand-900 text-brand-50 text-xs sm:text-sm py-2 px-4 text-center font-medium">
+        <span>🚀 Instant delivery on digital books & automated logins! Custom services turnaround within 1-3 hours.</span>
+    </div>
+
+    <!-- Navigation Bar -->
+    <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-slate-200 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-11 h-11 rounded-xl bg-gradient-to-tr from-brand-600 to-indigo-400 flex items-center justify-center text-white shadow-md shadow-brand-500/20 group-hover:scale-105 transition-transform">
+                    <i class="fa-solid fa-graduation-cap text-xl"></i>
+                </div>
+                <div>
+                    <span class="text-xl font-black tracking-tight text-slate-900">Academia<span class="text-brand-600">Pulse</span></span>
+                    <span class="block text-[10px] uppercase tracking-widest font-bold text-slate-400">Digital Research Hub</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden md:flex items-center gap-8 font-medium text-sm text-slate-600">
+                <a href="#products" class="hover:text-brand-600 transition-colors">Marketplace</a>
+                <a href="#services" class="hover:text-brand-600 transition-colors">Custom Services</a>
+                <a href="#how-it-works" class="hover:text-brand-600 transition-colors">How It Works</a>
+                <a href="#faq" class="hover:text-brand-600 transition-colors">FAQ</a>
+            </nav>
+
+            <!-- Action Buttons -->
+            <div class="flex items-center gap-3">
+                <button onclick="toggleCart()" class="relative p-2.5 rounded-xl border border-slate-200 text-slate-700 hover:bg-slate-100 transition-colors flex items-center gap-2">
+                    <i class="fa-solid fa-bag-shopping text-brand-600 text-lg"></i>
+                    <span class="hidden sm:inline text-sm font-semibold">Cart</span>
+                    <span id="cart-count" class="absolute -top-1.5 -right-1.5 bg-brand-600 text-white text-[11px] font-bold w-5 h-5 rounded-full flex items-center justify-center shadow-sm">0</span>
+                </button>
+                <a href="#products" class="hidden sm:inline-flex bg-brand-600 hover:bg-brand-700 text-white font-semibold text-sm px-5 py-2.5 rounded-xl shadow-md shadow-brand-600/20 transition-all hover:shadow-lg">
+                    Browse Store
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative overflow-hidden py-16 sm:py-24 bg-gradient-to-b from-brand-50/60 via-white to-white border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="max-w-3xl mx-auto text-center">
+                <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-100 text-brand-700 text-xs font-bold uppercase tracking-wider mb-6">
+                    <i class="fa-solid fa-bolt text-brand-600"></i> Trusted Academic & Research Solutions
+                </span>
+                <h1 class="text-4xl sm:text-6xl font-black text-slate-900 tracking-tight leading-[1.1] mb-6">
+                    Elevate Your Research & <span class="bg-gradient-to-r from-brand-600 to-indigo-500 bg-clip-text text-transparent">Academic Workflow</span>
+                </h1>
+                <p class="text-lg sm:text-xl text-slate-600 mb-8 leading-relaxed">
+                    Access high-speed Turnitin originality checks, professional AI removal assistance, premier digital e-books, bespoke research writing, and secure tool logins instantly.
+                </p>
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <a href="#products" class="w-full sm:w-auto bg-brand-600 hover:bg-brand-700 text-white font-bold px-8 py-4 rounded-xl shadow-lg shadow-brand-600/25 transition-all hover:scale-[1.02] text-center">
+                        Explore Digital Products
+                    </a>
+                    <a href="#services" class="w-full sm:w-auto bg-white hover:bg-slate-50 text-slate-700 font-bold px-8 py-4 rounded-xl border border-slate-200 transition-all text-center shadow-sm">
+                        Request Custom Service
+                    </a>
+                </div>
+
+                <!-- Trust Metrics -->
+                <div class="grid grid-cols-3 gap-6 mt-16 pt-12 border-t border-slate-200/80 max-w-2xl mx-auto">
+                    <div>
+                        <div class="text-2xl sm:text-3xl font-black text-slate-900">100%</div>
+                        <div class="text-xs sm:text-sm text-slate-500 font-medium mt-1">Confidential & Secure</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl sm:text-3xl font-black text-slate-900">&lt; 1 hr</div>
+                        <div class="text-xs sm:text-sm text-slate-500 font-medium mt-1">Report Turnaround</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl sm:text-3xl font-black text-slate-900">24/7</div>
+                        <div class="text-xs sm:text-sm text-slate-500 font-medium mt-1">Customer Support</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Marketplace Section -->
+    <section id="products" class="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+            <div>
+                <span class="text-brand-600 font-bold text-sm uppercase tracking-wider">Catalog</span>
+                <h2 class="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight mt-1">Digital Products & Services</h2>
+            </div>
+            
+            <!-- Category Filter Buttons -->
+            <div class="flex flex-wrap gap-2" id="filter-container">
+                <button onclick="filterProducts('all')" class="filter-btn active px-4 py-2 rounded-xl text-sm font-semibold bg-brand-600 text-white shadow-sm transition-all">All Items</button>
+                <button onclick="filterProducts('report')" class="filter-btn px-4 py-2 rounded-xl text-sm font-semibold bg-white border border-slate-200 text-slate-600 hover:bg-slate-100 transition-all">Reports & AI</button>
+                <button onclick="filterProducts('book')" class="filter-btn px-4 py-2 rounded-xl text-sm font-semibold bg-white border border-slate-200 text-slate-600 hover:bg-slate-100 transition-all">Books & Guides</button>
+                <button onclick="filterProducts('service')" class="filter-btn px-4 py-2 rounded-xl text-sm font-semibold bg-white border border-slate-200 text-slate-600 hover:bg-slate-100 transition-all">Writing & Research</button>
+                <button onclick="filterProducts('login')" class="filter-btn px-4 py-2 rounded-xl text-sm font-semibold bg-white border border-slate-200 text-slate-600 hover:bg-slate-100 transition-all">Tool Logins</button>
+            </div>
+        </div>
+
+        <!-- Product Grid -->
+        <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Dynamically populated via JavaScript -->
+        </div>
+    </section>
+
+    <!-- Custom Service Request Section -->
+    <section id="services" class="py-16 bg-slate-900 text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#6366f1_1px,transparent_1px)] [background-size:16px_16px]"></div>
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="px-3 py-1 rounded-full bg-brand-500/20 text-brand-300 text-xs font-bold uppercase tracking-wider">Custom Assistance</span>
+                <h2 class="text-3xl sm:text-4xl font-black tracking-tight mt-3">Need Custom Research or Writing?</h2>
+                <p class="text-slate-400 mt-2 text-sm sm:text-base">Submit your specific prompt, essay guidelines, or Turnitin/AI removal request directly to our expert team for a fast quote.</p>
+            </div>
+
+            <form id="custom-request-form" onsubmit="handleCustomSubmit(event)" class="bg-slate-800/80 border border-slate-700/80 p-6 sm:p-10 rounded-3xl shadow-2xl backdrop-blur-xl">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
+                    <div>
+                        <label class="block text-sm font-medium text-slate-300 mb-2">Your Name</label>
+                        <input type="text" id="cust-name" required placeholder="Michael Mutinda" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-brand-500 transition-colors">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-slate-300 mb-2">Email Address</label>
+                        <input type="email" id="cust-email" required placeholder="michael@example.com" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-brand-500 transition-colors">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
+                    <div>
+                        <label class="block text-sm font-medium text-slate-300 mb-2">Service Type</label>
+                        <select id="cust-service-type" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-500 transition-colors">
+                            <option value="Turnitin & AI Removal">Turnitin Check & AI Removal</option>
+                            <option value="Research & Academic Writing">Research & Academic Writing</option>
+                            <option value="Stealth Writer Subscription">Stealth Writer Login Support</option>
+                            <option value="Custom Book Order">Custom Book/Resource Request</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-slate-300 mb-2">Desired Turnaround</label>
+                        <select id="cust-turnaround" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-500 transition-colors">
+                            <option value="Urgent (Under 3 Hours)">Urgent (Under 3 Hours)</option>
+                            <option value="Standard (Within 24 Hours)">Standard (Within 24 Hours)</option>
+                            <option value="Flexible (2-3 Days)">Flexible (2-3 Days)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="mb-6">
+                    <label class="block text-sm font-medium text-slate-300 mb-2">Project Details / Instructions</label>
+                    <textarea id="cust-details" rows="4" required placeholder="Describe your topic, word count, formatting style, or specific Turnitin/AI score reduction requirements..." class="w-full bg-slate-900 border border-slate-700 rounded-xl p-4 text-white placeholder-slate-500 focus:outline-none focus:border-brand-500 transition-colors"></textarea>
+                </div>
+
+                <button type="submit" class="w-full bg-brand-600 hover:bg-brand-700 text-white font-bold py-4 rounded-xl shadow-lg shadow-brand-600/30 transition-all hover:scale-[1.01]">
+                    Submit Custom Request
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+            <span class="text-brand-600 font-bold text-sm uppercase tracking-wider">Simple Process</span>
+            <h2 class="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight mt-1">How AcademiaPulse Works</h2>
+            <p class="text-slate-600 mt-2">Get what you need in three seamless steps.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-white p-8 rounded-3xl border border-slate-200/80 shadow-sm relative">
+                <div class="w-12 h-12 rounded-2xl bg-brand-50 text-brand-600 font-black text-lg flex items-center justify-center mb-6">01</div>
+                <h3 class="text-xl font-bold text-slate-900 mb-3">Choose Your Product or Service</h3>
+                <p class="text-slate-600 text-sm leading-relaxed">Browse our marketplace for instant digital books, tool accounts, or submit details for custom research and reports.</p>
+            </div>
+            <div class="bg-white p-8 rounded-3xl border border-slate-200/80 shadow-sm relative">
+                <div class="w-12 h-12 rounded-2xl bg-brand-50 text-brand-600 font-black text-lg flex items-center justify-center mb-6">02</div>
+                <h3 class="text-xl font-bold text-slate-900 mb-3">Secure Checkout & Upload</h3>
+                <p class="text-slate-600 text-sm leading-relaxed">Complete your order securely and upload any documents or instructions required for custom processing.</p>
+            </div>
+            <div class="bg-white p-8 rounded-3xl border border-slate-200/80 shadow-sm relative">
+                <div class="w-12 h-12 rounded-2xl bg-brand-50 text-brand-600 font-black text-lg flex items-center justify-center mb-6">03</div>
+                <h3 class="text-xl font-bold text-slate-900 mb-3">Instant Delivery & Results</h3>
+                <p class="text-slate-600 text-sm leading-relaxed">Receive instant downloads for digital items or finalized reports and credentials delivered directly to your email.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-16 bg-slate-100/80 border-t border-slate-200/80">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <span class="text-brand-600 font-bold text-sm uppercase tracking-wider">Got Questions?</span>
+                <h2 class="text-3xl font-black text-slate-900 tracking-tight mt-1">Frequently Asked Questions</h2>
+            </div>
+
+            <div class="space-y-4">
+                <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
+                    <button onclick="toggleFaq(this)" class="w-full px-6 py-4 text-left font-bold text-slate-900 flex justify-between items-center gap-4">
+                        <span>How quickly will I receive my Turnitin & AI removal report?</span>
+                        <i class="fa-solid fa-chevron-down text-sm text-slate-400 transition-transform"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-4 text-sm text-slate-600 leading-relaxed">
+                        Standard reports are processed and returned via email within 30 to 60 minutes during working hours. Urgent requests receive top priority in under 30 minutes.
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
+                    <button onclick="toggleFaq(this)" class="w-full px-6 py-4 text-left font-bold text-slate-900 flex justify-between items-center gap-4">
+                        <span>Are the Stealth Writer logins stable and guaranteed?</span>
+                        <i class="fa-solid fa-chevron-down text-sm text-slate-400 transition-transform"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-4 text-sm text-slate-600 leading-relaxed">
+                        Yes! All tool logins come with full support and guarantee replacements throughout your active subscription period.
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
+                    <button onclick="toggleFaq(this)" class="w-full px-6 py-4 text-left font-bold text-slate-900 flex justify-between items-center gap-4">
+                        <span>How do I access digital books and guides after purchase?</span>
+                        <i class="fa-solid fa-chevron-down text-sm text-slate-400 transition-transform"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-4 text-sm text-slate-600 leading-relaxed">
+                        Instant downloads are provided immediately on the confirmation screen and sent directly to your email address as secure PDF files.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="flex items-center gap-3">
+                <div class="w-9 h-9 rounded-xl bg-brand-600 flex items-center justify-center text-white">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+                <span class="text-white font-bold text-lg">Academia<span class="text-brand-500">Pulse</span></span>
+            </div>
+            <p class="text-sm text-center">© 2026 AcademiaPulse. All rights reserved. Professional Academic & Research Solutions.</p>
+            <div class="flex items-center gap-4 text-lg">
+                <a href="#" class="hover:text-white transition-colors"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="#" class="hover:text-white transition-colors"><i class="fa-brands fa-telegram"></i></a>
+                <a href="#" class="hover:text-white transition-colors"><i class="fa-solid fa-envelope"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Shopping Cart Drawer Overlay -->
+    <div id="cart-drawer-overlay" onclick="toggleCart()" class="fixed inset-0 bg-slate-900/50 backdrop-blur-sm z-50 hidden opacity-0 transition-opacity duration-300"></div>
+
+    <!-- Shopping Cart Drawer -->
+    <div id="cart-drawer" class="fixed top-0 right-0 h-full w-full max-w-md bg-white shadow-2xl z-50 transform translate-x-full transition-transform duration-300 flex flex-col">
+        <div class="p-6 border-b border-slate-200 flex items-center justify-between">
+            <h3 class="text-xl font-black text-slate-900 flex items-center gap-2">
+                <i class="fa-solid fa-bag-shopping text-brand-600"></i> Your Shopping Cart
+            </h3>
+            <button onclick="toggleCart()" class="w-9 h-9 rounded-xl bg-slate-100 text-slate-500 hover:bg-slate-200 flex items-center justify-center transition-colors">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+        <div id="cart-items" class="flex-1 overflow-y-auto p-6 space-y-4">
+            <!-- Dynamically filled -->
+        </div>
+
+        <div class="p-6 border-t border-slate-200 bg-slate-50">
+            <div class="flex justify-between mb-4 text-lg font-bold text-slate-900">
+                <span>Total:</span>
+                <span id="cart-total" class="text-brand-600">$0.00</span>
+            </div>
+            <button onclick="checkout()" class="w-full bg-brand-600 hover:bg-brand-700 text-white font-bold py-4 rounded-xl shadow-lg shadow-brand-600/25 transition-all">
+                Proceed to Secure Checkout
+            </button>
+        </div>
+    </div>
+
+    <!-- JavaScript Application Logic -->
+    <script>
+        // Product Catalog Data
+        const products = [
+            {
+                id: 1,
+                title: "Turnitin Originality Report & Score Check",
+                category: "report",
+                price: 5.00,
+                badge: "Popular",
+                icon: "fa-shield-halved",
+                description: "Get a comprehensive Turnitin similarity report and breakdown within 30 minutes without repository storage."
+            },
+            {
+                id: 2,
+                title: "Professional AI Content Removal & Humanization",
+                category: "report",
+                price: 12.00,
+                badge: "Fast Turnaround",
+                icon: "fa-wand-magic-sparkles",
+                description: "Transform AI-generated text into authentic, fluent, human-sounding academic prose."
+            },
+            {
+                id: 3,
+                title: "Advanced Research Methodology & EBP Handbook",
+                category: "book",
+                price: 18.50,
+                badge: "Instant PDF",
+                icon: "fa-book-open",
+                description: "Complete guide covering PICO questions, literature search operators, and evidence hierarchies."
+            },
+            {
+                id: 4,
+                title: "Custom Essay & Research Writing Consultation",
+                category: "service",
+                price: 25.00,
+                badge: "Expert Support",
+                icon: "fa-pen-nib",
+                description: "Bespoke academic writing, structural editing, and thorough bibliography compilation."
+            },
+            {
+                id: 5,
+                title: "Stealth Writer Pro Account Login (30 Days)",
+                category: "login",
+                price: 15.00,
+                badge: "Verified Access",
+                icon: "fa-key",
+                description: "Full private access credential for advanced rewriting and AI bypassing tool workflows."
+            },
+            {
+                id: 6,
+                title: "Personal Finance & AI Budgeting E-Book",
+                category: "book",
+                price: 14.00,
+                badge: "Best Seller",
+                icon: "fa-chart-pie",
+                description: "Learn how to build automated spending workflows and manage personal budgets using smart tools."
+            }
+        ];
+
+        let cart = [];
+
+        // Render Products
+        function renderProducts(filter = 'all') {
+            const grid = document.getElementById('product-grid');
+            grid.innerHTML = '';
+
+            const filtered = filter === 'all' ? products : products.filter(p => p.category === filter);
+
+            filtered.forEach(product => {
+                const card = document.createElement('div');
+                card.className = "bg-white rounded-3xl border border-slate-200/80 p-6 shadow-sm hover:shadow-xl transition-all flex flex-col justify-between group";
+                card.innerHTML = `
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-12 h-12 rounded-2xl bg-brand-50 text-brand-600 flex items-center justify-center text-xl group-hover:bg-brand-600 group-hover:text-white transition-colors">
+                                <i class="fa-solid ${product.icon}"></i>
+                            </div>
+                            <span class="px-3 py-1 rounded-full bg-slate-100 text-slate-700 text-xs font-bold">${product.badge}</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">${product.title}</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6">${product.description}</p>
+                    </div>
+                    <div class="flex items-center justify-between pt-4 border-t border-slate-100">
+                        <span class="text-2xl font-black text-slate-900">$${product.price.toFixed(2)}</span>
+                        <button onclick="addToCart(${product.id})" class="bg-brand-50 hover:bg-brand-600 text-brand-600 hover:text-white font-bold text-sm px-4 py-2.5 rounded-xl transition-all">
+                            Add to Cart
+                        </button>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        // Filter Function
+        function filterProducts(category) {
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.remove('bg-brand-600', 'text-white');
+                btn.classList.add('bg-white', 'border', 'border-slate-200', 'text-slate-600');
+            });
+            event.target.classList.remove('bg-white', 'border', 'border-slate-200', 'text-slate-600');
+            event.target.classList.add('bg-brand-600', 'text-white');
+
+            renderProducts(category);
+        }
+
+        // Cart Management
+        function addToCart(productId) {
+            const product = products.find(p => p.id === productId);
+            const existing = cart.find(item => item.id === productId);
+
+            if (existing) {
+                existing.quantity += 1;
+            } else {
+                cart.push({ ...product, quantity: 1 });
+            }
+
+            updateCartUI();
+            toggleCart();
+        }
+
+        function updateCartUI() {
+            const countEl = document.getElementById('cart-count');
+            const itemsEl = document.getElementById('cart-items');
+            const totalEl = document.getElementById('cart-total');
+
+            const totalCount = cart.reduce((sum, item) => sum + item.quantity, 0);
+            const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+
+            countEl.textContent = totalCount;
+            totalEl.textContent = `$${totalPrice.toFixed(2)}`;
+
+            if (cart.length === 0) {
+                itemsEl.innerHTML = `<div class="text-center py-12 text-slate-400"><i class="fa-solid fa-basket-shopping text-4xl mb-3"></i><p>Your cart is empty.</p></div>`;
+                return;
+            }
+
+            itemsEl.innerHTML = '';
+            cart.forEach(item => {
+                const div = document.createElement('div');
+                div.className = "flex items-center justify-between p-4 rounded-2xl bg-slate-50 border border-slate-200";
+                div.innerHTML = `
+                    <div class="flex-1 pr-4">
+                        <h4 class="font-bold text-sm text-slate-900">${item.title}</h4>
+                        <span class="text-xs text-slate-500">$${item.price.toFixed(2)} x ${item.quantity}</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <button onclick="changeQty(${item.id}, 1)" class="w-7 h-7 bg-white border border-slate-200 rounded-lg text-slate-600 font-bold hover:bg-slate-100">+</button>
+                        <button onclick="changeQty(${item.id}, -1)" class="w-7 h-7 bg-white border border-slate-200 rounded-lg text-slate-600 font-bold hover:bg-slate-100">-</button>
+                    </div>
+                `;
+                itemsEl.appendChild(div);
+            });
+        }
+
+        function changeQty(id, delta) {
+            const item = cart.find(i => i.id === id);
+            if (item) {
+                item.quantity += delta;
+                if (item.quantity <= 0) {
+                    cart = cart.filter(i => i.id !== id);
+                }
+            }
+            updateCartUI();
+        }
+
+        function toggleCart() {
+            const drawer = document.getElementById('cart-drawer');
+            const overlay = document.getElementById('cart-drawer-overlay');
+            const isOpen = drawer.classList.contains('translate-x-full');
+
+            if (isOpen) {
+                overlay.classList.remove('hidden');
+                setTimeout(() => overlay.classList.remove('opacity-0'), 10);
+                drawer.classList.remove('translate-x-full');
+            } else {
+                drawer.classList.add('translate-x-full');
+                overlay.classList.add('opacity-0');
+                setTimeout(() => overlay.classList.add('hidden'), 300);
+            }
+        }
+
+        function checkout() {
+            if (cart.length === 0) {
+                alert('Your cart is empty!');
+                return;
+            }
+            alert('Redirecting to secure payment gateway...');
+            cart = [];
+            updateCartUI();
+            toggleCart();
+        }
+
+        // Custom Form Submit Handler
+        function handleCustomSubmit(e) {
+            e.preventDefault();
+            const name = document.getElementById('cust-name').value;
+            alert(`Thank you, ${name}! Your custom service request has been submitted successfully. Our team will contact you via email shortly.`);
+            document.getElementById('custom-request-form').reset();
+        }
+
+        // FAQ Accordion Toggle
+        function toggleFaq(btn) {
+            const content = btn.nextElementSibling;
+            const icon = btn.querySelector('i');
+            content.classList.toggle('hidden');
+            icon.classList.toggle('rotate-180');
+        }
+
+        // Initialize on load
+        renderProducts();
+    </script>
+</body>
+</html>
